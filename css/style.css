@@ -1,0 +1,1058 @@
+/* ---------- Fonts ----------------- */
+
+/* Playfair */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body, .card, .card_body, .card_footer, .card_title, .card_logo {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+
+/* ---------- Basic CSS ----------------- */
+
+:root {
+    --font-playfair: "Playfair Display", serif;
+    --font-Poppins: "Poppins", sans-serif;
+    --font-inter: "Inter", sans-serif;
+
+    /* colors */
+    --pink: #ff66c4;
+    --bright-teal: #36bbb9;
+    --blue: #0189c5;
+    --gold: #cc9d6d;
+    --deep-pink: #dd5976;
+    --red: #ff0000;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-playfair);
+}
+
+
+html {
+    font-size: 0.6vw; /* réduit l’échelle générale */
+  }
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 1.1vw; /* 1rem = 10px */
+    }
+}
+
+body {
+    background: #e3e3e3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+main {
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 2rem;
+    }
+}
+
+
+/* ---------- Book CSS ----------------- */
+
+.flipbook_wrapper  {
+    width: 120rem;
+    margin: auto;
+}
+
+.flipbook {
+    width: 100%;
+    height: 110vh;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+.single_page {
+    flex: 1;
+    overflow-y: visible;
+    padding-bottom: 2rem; /* espace pour le footer */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .page_footer_menu {
+    margin-top: auto;
+  }
+
+.gradient_first {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, color-stop(.95, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, .2)));
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, .2) 100%);
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, .2) 100%);
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, .2) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, .2) 100%);
+    background-image: linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, .2) 100%);
+    z-index: -1;
+}
+
+.gradient_second {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear,right top,left top,color-stop(.95,rgba(0,0,0,0)),color-stop(1,rgba(0,0,0,.15)));
+    background-image: -webkit-linear-gradient(right,rgba(0,0,0,0) 95%,rgba(0,0,0,.15) 100%);
+    background-image: -moz-linear-gradient(right,rgba(0,0,0,0) 95%,rgba(0,0,0,.15) 100%);
+    background-image: -ms-linear-gradient(right,rgba(0,0,0,0) 95%,rgba(0,0,0,.15) 100%);
+    background-image: -o-linear-gradient(right,rgba(0,0,0,0) 95%,rgba(0,0,0,.15) 100%);
+    background-image: linear-gradient(right,rgba(0,0,0,0) 95%,rgba(0,0,0,.15) 100%);
+    z-index: -1;
+}
+
+
+/* single page */
+
+.single_page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+
+
+/* front page */
+
+.front_page {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.front_page::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1rem;
+    height: calc(100% - 1.5rem);
+    background: #01aba8;
+    border-top-right-radius: 0.8rem;
+}
+
+
+.front_page .logo_wrap {
+    text-align: end;
+}
+
+.front_page .logo_wrap .logo {
+    width: 9rem;
+}
+
+.front_page .logo_wrap h2 {
+    font-size: 1.6rem;
+    font-family: var(--font-Poppins);
+    font-weight: 700;
+    color: #000;
+}
+
+.front_page .banner {
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+    padding: 0 3rem;
+}
+
+.front_page .banner_img {
+    width: 100%;
+    height: 27rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.front_page .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    transform: translateY(-1.3rem);
+}
+
+.front_page .box {
+    text-align: center;
+}
+
+.front_page .box .num {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: var(--font-Poppins);
+    background: #36bbb9;
+    margin: auto;
+}
+
+.front_page .box .box_body {
+    padding: 1.5rem 0.5rem;
+}
+
+.front_page .box:not(:last-child) .box_body {
+    border-right: 1px solid #000;
+}
+
+.front_page .box p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000;
+}
+
+.front_page .box p span {
+    font-weight: 900;
+}
+
+.qr_code {
+    width: 5.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* table of contents page */
+
+.table_of_contents_page {
+    padding: 6rem 7rem 2.5rem 7rem;
+}
+
+.table_of_contents_page .top_logo {
+    width: 12.8rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.4rem;
+}
+
+.table_of_contents_page .top_logo img {
+    width: 100%;
+}
+
+.table_of_contents_page .block:not(:last-child) {
+    padding-bottom: 0.6rem;
+}
+
+.table_of_contents_page .title {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-left: 3.2rem;
+    letter-spacing: 0.05rem;
+}
+
+.table_of_contents_page ul li {
+    list-style: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.table_of_contents_page ul li span {
+    display: inline-block;
+    width: 1rem;
+    text-align: end;
+    font-weight: 700;
+    margin-right: 2.2rem;
+    font-size: 1.2rem;
+}
+
+
+.table_of_contents_page .accueil .title {
+    color: var(--pink);
+}
+
+.table_of_contents_page .accueil ul li span {
+    color: var(--pink);
+}
+
+.table_of_contents_page .alimentaire .title {
+    color: var(--bright-teal);
+}
+
+.table_of_contents_page .alimentaire ul li span {
+    color: var(--bright-teal);
+}
+
+.table_of_contents_page .boissons .title {
+    color: var(--blue);
+}
+
+.table_of_contents_page .boissons ul li span {
+    color: var(--blue);
+}
+
+
+.table_of_contents_page .equipement .title {
+    color: var(--gold);
+}
+
+.table_of_contents_page .equipement ul li span {
+    color: var(--gold);
+}
+
+.table_of_contents_page .entretien .title {
+    color: var(--deep-pink);
+}
+
+.table_of_contents_page .entretien ul li span {
+    color: var(--deep-pink);
+}
+
+.table_of_contents_page .services .title {
+    color: var(--red);
+}
+
+.table_of_contents_page .services ul li span {
+    color: var(--red);
+}
+
+.table_of_contents_page .ressources .title {
+    color: var(--blue);
+}
+
+.table_of_contents_page .ressources ul li span {
+    color: var(--blue);
+}
+
+
+
+/* page header */
+
+.page_header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 6.5rem;
+    padding: 1.2rem 0.6rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page_header .logo {
+    width: auto;
+    height: 3.7rem;
+}
+
+.search_form {
+    width: 10rem;
+    position: relative;
+    margin-left: auto;
+}
+
+.search_form input {
+    width: 100%;
+    height: 2rem;
+    border-radius: 0.7rem;
+    border: 1px solid #000;
+    padding: 0 0.6rem 0 2.2rem;
+    font-size: 1.3rem;
+}
+
+.search_form button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.6rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.search_form button img {
+    width: 1.2rem;
+}
+
+
+
+
+.page_inner_section:not(:last-child) {
+    padding-bottom: 1.2rem;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    padding-bottom: 0.6rem;
+}
+
+.title.v1 {
+    font-size: 1.1rem;
+    font-weight: 900;
+
+}
+
+
+/* slider wrapper */
+
+.slider_wrapper {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    margin-right: -0.8rem;
+}
+
+.slider_wrapper.px_12 {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    margin-right: -0.6rem;
+}
+
+.slider1 .owl-item {
+    margin-right: 1.4rem !important;
+}
+
+.slider2 .owl-item {
+    margin-right: 1.2rem !important;
+}
+
+.owl-stage {
+    display: flex;
+}
+
+
+/* card */
+
+.card {
+    min-height: 14.5rem;
+    height: auto;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+.card_logo {
+    height: 6.6rem;
+    text-align: center;
+}
+
+.card_logo img {
+    width: auto;
+    height: 100%;
+}
+
+.card_body {
+    min-height: 6rem; /* ajuste selon besoin */
+  }
+.card_title {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    font-weight: 500;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+            line-clamp: 5; 
+    -webkit-box-orient: vertical;
+    min-height: 6.5rem;
+    text-overflow: ellipsis;
+}
+
+.card_footer {
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.card_footer .dot {
+    display: block;
+    margin: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--red);
+}
+
+.card_footer .dot.gold {
+    background: var(--gold);
+}
+
+.card_footer h5,
+.card_footer h6 {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  display: block;
+  max-height: none;
+overflow: visible;
+white-space: normal;
+  padding: 0 0.4rem;
+}
+/* card sm */
+.card_sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;   /* plus large */
+    min-height: 11.5rem;
+    height: auto;
+    padding: 0.4rem 0.8rem;   /* plus d'espace intérieur */
+    text-align: center;
+   border-radius: 1rem; 
+  }
+  .card_sm .card_logo {
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .card_sm .card_body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+.card_sm .card_title {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    min-height: 2.3rem;
+}
+
+.card_footer .dot {
+    display: block;
+    margin: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.card_sm .card_footer h6 {
+    font-size: 1rem;
+    padding-top: 0.6rem;
+}
+.card_sm .card_footer {
+    margin-top: 0.5rem;
+  }
+
+
+.owl-carousel .owl-item img {
+    display: inline;
+    width: unset;
+    max-width: 100%;
+}
+@media (max-width: 768px) {
+    .owl-carousel .owl-item {
+      width: 160px !important;
+    }
+  
+    .card_sm {
+      max-width: 160px;
+    }
+  }
+
+/* owl arrow */
+
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4rem !important;
+    height: 4rem !important;
+    border-radius: 50%;
+    background-color: #db3f3e;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+}
+
+.owl-nav button:hover:not(:active) {
+    opacity: 0.8;
+}
+
+.owl-nav button img {
+    width: 1.8rem !important;
+    height: auto !important;
+}
+
+.owl-prev {
+    left: -2.3rem;
+}
+
+.owl-next {
+    right: -1.6rem;
+}
+
+.slider2 .owl-nav button {
+    width: 2.6rem;
+    height: 2.6rem;
+    top: 58%;
+}
+
+.slider2 .owl-nav button img {
+    width: 1.3rem;
+}
+
+.slider2 .owl-prev {
+    left: -1.6rem;
+}
+
+.slider2 .owl-next {
+    right: -1rem;
+}
+
+
+
+
+/* page footer menu */
+
+.page_footer_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 0rem 0 1rem;
+    padding-right: 1.5rem;
+    position: relative;
+    z-index: 111;
+}
+
+.page_footer_menu li {
+    list-style: none;
+}
+
+.page_footer_menu a {
+    text-decoration: none;
+    color: var(--deep-pink);
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.page_footer_menu a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* fournisseurs page */
+
+.fournisseurs_page .title {
+    color: var(--deep-pink);
+}
+
+.fournisseurs_page .card {
+    border-color: var(--deep-pink);
+}
+
+
+/* accueil page */
+
+.accueil_page .title {
+    color: var(--pink);
+}
+
+.accueil_page .card {
+    border-color: var(--pink);
+}
+
+.accueil_page .owl-nav button {
+    background: #dd5976;
+}
+
+.accueil_page .page_footer_menu a {
+    color: var(--pink);
+}
+
+
+/* alimentaire page */
+
+.alimentaire_page .title {
+    color: var(--bright-teal);
+}
+
+.alimentaire_page .card {
+    border-color: var(--bright-teal);
+}
+
+.alimentaire_page .owl-nav button {
+    background: #2197bd;
+}
+
+.alimentaire_page .page_footer_menu a {
+    color: var(--bright-teal);
+}
+
+
+/* industriels page */
+
+.industriels_page .title {
+    color: var(--bright-teal);
+}
+
+.industriels_page .card {
+    border-color: var(--bright-teal);
+}
+
+.industriels_page .owl-nav button {
+    background: #353ea5;
+}
+
+.industriels_page .page_footer_menu a {
+    color: var(--bright-teal);
+}
+
+/* boissons page */
+
+.boissons_page .title {
+    color: var(--blue);
+}
+
+.boissons_page .card {
+    border-color: var(--blue);
+}
+
+.boissons_page .owl-nav button {
+    background: #353ea5;
+}
+
+.boissons_page .page_footer_menu a {
+    color: var(--blue);
+}
+
+
+
+/* equipement page */
+
+.equipement_page .title {
+    color: var(--gold);
+}
+
+.equipement_page .card {
+    border-color: var(--gold);
+}
+
+.equipement_page .owl-nav button {
+    background: #cc9d6d;
+}
+
+.equipement_page .page_footer_menu a {
+    color: var(--gold);
+}
+
+
+/* entretien page */
+
+.entretien_page .title {
+    color: var(--deep-pink);
+}
+
+.entretien_page .card {
+    border-color: var(--deep-pink);
+}
+
+.entretien_page .owl-nav button {
+    background: #c6488c;
+}
+
+.entretien_page .page_footer_menu a {
+    color: var(--deep-pink);
+}
+
+
+
+/* services page */
+
+.services_page .title {
+    color: var(--red);
+}
+
+.services_page .card {
+    border-color: var(--red);
+}
+
+.services_page .owl-nav button {
+    background: #db3f3e;
+}
+
+.services_page .page_footer_menu a {
+    color: var(--red);
+}
+
+
+
+/* services page */
+
+.rh_page .title {
+    color: var(--blue);
+}
+
+.rh_page .card {
+    border-color: var(--blue);
+}
+
+.rh_page .owl-nav button {
+    background: #353ea5;
+}
+
+.rh_page .page_footer_menu a {
+    color: var(--blue);
+}
+
+
+
+/* back page */
+
+.back_page {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.back_page::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1rem;
+    height: calc(100% - 1.5rem);
+    background: #01aba8;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+}
+
+.back_page .logo_wrap {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.back_page .logo_wrap .logo {
+    width: 12.6rem;
+}
+
+.back_page .logo_wrap p {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: var(--font-inter);
+    letter-spacing: 0.01rem;
+    padding-top: 0.2rem;
+}
+
+
+/* img_boxs */
+
+.back_page .img_boxs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+}
+
+.back_page .img_box {
+    text-align: center;
+}
+
+.back_page .img_box .logo {
+    height: 3.6rem;
+}
+
+.back_page .img_box .logo img {
+    width: auto;
+    height: 100%;
+}
+
+.back_page .img_box p {
+    font-size: 0.68rem;
+    line-height: 1.2;
+}
+
+.back_page .img_box p span {
+    font-weight: 800;
+}
+
+
+/* gallery */
+
+.back_page .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 8rem);
+    gap: 0.7rem;
+    margin-top: auto;
+}
+
+.back_page .gallery img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4rem;
+    object-fit: cover;
+}
+
+.back_page .gallery img:nth-child(1) {
+    grid-row: 1 / 3;
+}
+
+.back_page .copyright {
+    text-align: center;
+    padding: 0.9rem 0 1.2rem;
+    font-style: italic;
+    line-height: 1.25;
+    font-size: 0.6rem;
+    color: #808080;
+}
+.fullpage_image {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .fullpage_image img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 2000vh;
+    max-width: 95vw;
+    object-fit: contain;
+    margin: auto;
+  }
+/* === Fix overflow & espacement sans toucher au code initial === */
+/* Permet d’afficher toute la carte sans coupure */
+.owl-carousel .owl-stage-outer,
+.owl-carousel .owl-stage {
+  overflow: visible !important;
+}
+
+/* Sépare visuellement les items pour éviter tout chevauchement */
+.owl-carousel .owl-item {
+  margin: 0 1rem !important;
+}
+
+/* Assure que le contenu interne de la card n’est pas masqué */
+.owl-carousel .owl-item .card {
+  overflow: visible !important;
+}
+/* === Ajustements finaux pour la bannière 2×2 === */
+/* Supprime le padding par défaut pour que les images occupent tout l’espace */
+.front_page .banner {
+    margin: auto!important;
+    padding: 0 3rem !important;
+  }
+
+  /* Container 2×2 sans padding additionnel */
+  .banner_images.grid-4 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin: 0 auto !important;
+    width: calc(100% - 0rem) !important;
+  }
+  
+/* Images uniformes en hauteur et largeur (4:3) */
+.banner_images.grid-4 .banner_img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+ 
+  .card_footer h6 {
+    white-space: pre-line; /* Permet de forcer les retours à la ligne via \n */
+    word-break: break-word;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    padding: 0 0.6rem;
+    text-align: left;
+  }
+  .image-centered {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .responsive-full-image {
+    max-height: 95vh;
+    max-width: 95%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+  }
+  .title a.goto-page {
+    color: inherit;         /* garde la couleur du texte parent */
+    text-decoration: none;  /* enlève le soulignement */
+    font-weight: inherit;   /* garde la graisse de police du h3 */
+  }
+  .table_of_contents_page .block {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+  
+  .table_of_contents_page .block .title {
+    font-size: 2.2rem;
+  }
+  
+  .table_of_contents_page .block ul li {
+    font-size: 1.25rem;
+  }
+  
+  .table_of_contents_page .block ul li span {
+    font-size: 1.4rem;
+  }
+  /* Corriger l'effet "vide" quand seulement 2 cartes visibles */
+.owl-carousel .owl-stage {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+  }
+  
+  /* Réduire un peu l'espacement horizontal des cartes */
+  .owl-carousel .owl-item {
+    margin: 0 1rem !important;
+  }
+  
+  /* Empêcher que les cartes paraissent "collées en haut" */
+  .owl-stage-outer {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 600px !important;
+  }
+
